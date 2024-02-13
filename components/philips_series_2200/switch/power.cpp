@@ -43,6 +43,11 @@ namespace esphome
                     for (unsigned int i = 0; i <= POWER_MESSAGE_REPETITIONS; i++)
                         mainboard_uart_->write_array(command_pre_power_on);
 
+                    // Send enable all
+                    for (unsigned int i = 0; i <= POWER_MESSAGE_REPETITIONS; i++)
+                        mainboard_uart_->write_array(command_power_with_cleaning);
+
+
                     // Send power on message
                     if (cleaning_)
                     {
